@@ -2,7 +2,7 @@
 
 CMSC 330, Spring 2021
 
-Due February 1 (late February 3, *5% penalty*). **Note the deadline: just under one week**
+Due February 3 (late February 4, *5% penalty*). **Note the deadline: just under one week**
 
 Points: 80 public, 20 semipublic
 
