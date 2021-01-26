@@ -1,4 +1,4 @@
-# Project 1: Ruby Warmup
+# Project 1a: Ruby Warmup
 
 CMSC 330, Spring 2021
 
