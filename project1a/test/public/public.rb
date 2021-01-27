@@ -16,11 +16,19 @@ class PublicTests < MiniTest::Test
     end
 
     def test_public_ispalindrome
-        assert_equal(true, ispalindrome(0))
-        assert_equal(true, ispalindrome(1))
-        assert_equal(false, ispalindrome(10))
-        assert_equal(true, ispalindrome(101))
-        assert_equal(false, ispalindrome(120210))
+        if defined? :ispalindrome
+            assert_equal(true, ispalindrome(0))
+            assert_equal(true, ispalindrome(1))
+            assert_equal(false, ispalindrome(10))
+            assert_equal(true, ispalindrome(101))
+            assert_equal(false, ispalindrome(120210))
+        else
+            assert_equal(true, isPalindrome(0))
+            assert_equal(true, isPalindrome(1))
+            assert_equal(false, isPalindrome(10))
+            assert_equal(true, isPalindrome(101))
+            assert_equal(false, isPalindrome(120210))
+        end
     end
 
     def test_public_nthmax
@@ -87,7 +95,7 @@ class PublicTests < MiniTest::Test
         assert_equal(true, @phonebook.add("Jane", "110-134-1312", true))
         assert_equal(true, @phonebook.add("Jack", "114-192-1862", false))
         assert_equal(true, @phonebook.add("Jessie", "110-124-1131", true))
-        assert_equal(["John", "Jane", "Jessie"], @phonebook.namesByAc("110"))
+        assert_equal(["John", "Jane", "Jessie"].sort, @phonebook.namesByAc("110").sort)
         assert_equal(["Jack"], @phonebook.namesByAc("114"))
         assert_equal([], @phonebook.namesByAc("111"))
     end
