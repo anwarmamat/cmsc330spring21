@@ -112,6 +112,8 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu).  If you 
 
 ### macOS
 
+**If you are using an M1 Mac, please follow [https://piazza.com/class/kk79wy51s4z3jg?cid=70](https://piazza.com/class/kk79wy51s4z3jg?cid=70) first.  Then proceed below.**
+
 1. Install the Homebrew package manager
     - Run `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 2. Check your Ruby version by running `ruby -v`.  If it's older than 2.2.2, you'll need to install a newer version using `brew install ruby`
