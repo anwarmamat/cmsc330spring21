@@ -185,7 +185,7 @@ In part 2, you will be implementing a PhoneBook class. It is up to you to decide
   @phonebook.add("Jessie", "110-124-1131", true) == true
   # Note that Jessie's number here is a little different than in the other examples!
 
-  @phonebook.namesByAc("110") == ["John", "Jane", "Jessie"]
+  @phonebook.namesByAc("110") == ["John", "Jessie"]
   @phonebook.namesByAc("114") == ["Jack"]
   @phonebook.namesByAc("111") == []
   ```
