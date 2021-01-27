@@ -126,6 +126,7 @@ In part 2, you will be implementing a PhoneBook class. It is up to you to decide
     - If the person already exists, then the entry cannot be added to the PhoneBook.
     - If `number` is not in the format `NNN-NNN-NNNN`, the entry cannot be added to the PhoneBook.
     - If `number` already exists and is listed in the PhoneBook, the entry cannot be added. However, if `number` exists and is unlisted, the entry can be added.
+    - If `number` already exists as an unlisted number in the PhoneBook, but you are trying to add it as a listed number, the entry can be added.
 - **Type**: `(String, String, Bool) -> Bool`
 - **Assumptions**: No phone number will start with 0.
 - **Examples**:
