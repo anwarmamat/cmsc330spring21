@@ -1,3 +1,9 @@
+### Updates
+
+- Tests on Gradescope will accept both `ispalindrome(n)` and `isPalindrome(n)` in `warmup.rb`.
+- The description of `PhoneBook.add(name, number, is_listed)` has been updated to clarify the expected behavior of adding an entry as unlisted.
+- Example adding "Ravi" for `lookup` only had 2 arguments, now fixed to have three.
+
 # Project 1a: Ruby Warmup
 
 CMSC 330, Spring 2021
@@ -126,7 +132,8 @@ In part 2, you will be implementing a PhoneBook class. It is up to you to decide
     - If the person already exists, then the entry cannot be added to the PhoneBook.
     - If `number` is not in the format `NNN-NNN-NNNN`, the entry cannot be added to the PhoneBook.
     - If `number` already exists and is listed in the PhoneBook, the entry cannot be added. However, if `number` exists and is unlisted, the entry can be added.
-    - If `number` already exists as an unlisted number in the PhoneBook, but you are trying to add it as a listed number, the entry can be added.
+    - ~If `number` already exists as an unlisted number in the PhoneBook, but you are trying to add it as a listed number, the entry can be added.~
+    - A `number` can be added as unlisted any number of times, but can only be added as listed once.
 - **Type**: `(String, String, Bool) -> Bool`
 - **Assumptions**: No phone number will start with 0.
 - **Examples**:
@@ -148,7 +155,7 @@ In part 2, you will be implementing a PhoneBook class. It is up to you to decide
   @phonebook.add("Jane", "220-134-1312", true) == true
   @phonebook.add("Jack", "114-192-1862", false) == true
   @phonebook.add("Jessie", "410-124-1131", true) == true
-  @phonebook.add("Ravi", "110") == false
+  @phonebook.add("Ravi", "110", true) == false
 
   @phonebook.lookup("John") == nil
   @phonebook.lookup("Jack") == nil
