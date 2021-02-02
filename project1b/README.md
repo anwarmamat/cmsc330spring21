@@ -12,6 +12,10 @@ Points: 30 public, 36 semipublic, 34 secret
 
 For this project, you'll complete a Battleship game. [Here](https://www.youtube.com/watch?v=4gHJlYLomrs) is a video of the game, in case you haven't played it before. Your program will do things such as processesing text files containing `Ship` or attack strategy information, and you will process that data to build a 10X10 `GameBoard` of ships and perform attacks on the opponent's `GameBoard`. The goal of this project is to allow you to familiarize yourself with Ruby's built-in data structures, code blocks, and text processing capabilities.
 
+## Submitting
+
+Run `gradescope-submit` to submit.  Or, upload the files `input_controller.rb` and `game_board.rb` to Gradescope manually if you can't get the command to work.
+
 ## Project Files
 
 To begin this project you will need to run `git pull` to get the updates. This project is located in the `project1b` folder of the repository. The following is the project structure
