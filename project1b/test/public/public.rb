@@ -134,7 +134,7 @@ class PublicTests < MiniTest::Test
     end
 
     def test_public_test_failure
-        assert(read_ships_file(BAD_SHIPS), "#{BAD_SHIPS} Should Not read correctly")
+        refute(read_ships_file(BAD_SHIPS), "#{BAD_SHIPS} Should Not read correctly")
     end
 end
 
