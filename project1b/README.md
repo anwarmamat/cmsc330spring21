@@ -1,3 +1,7 @@
+### Updates
+
+- Fixed commands in the "Project Files" section to use correct paths
+
 # Project 1b: Battleship Game
 
 CMSC 330, Spring 2021
@@ -32,19 +36,19 @@ To begin this project you will need to run `git pull` to get the updates. This p
 You can run the game (If no attack strategy file provided, it will be randomly generated)
 
 ```bash
-ruby main.rb test/inputs/player1.txt test/inputs/player2.txt
+ruby src/main.rb test/public/inputs/player1.txt test/public/inputs/player2.txt
 ```
 
 Or
 
 ```bash
-ruby main.rb test/inputs/player1.txt test/inputs/player2.txt test/inputs/attack1.txt test/inputs/attack2.txt
+ruby src/main.rb test/public/inputs/player1.txt test/public/inputs/player2.txt test/public/inputs/attack1.txt test/public/inputs/attack2.txt
 ```
 
 The format is as follows
 
 ```bash
-ruby main.rb <first player ships information file> <second player ships information file> <first player attack strategy file> <second player attack strategy file>
+ruby src/main.rb <first player ships information file> <second player ships information file> <first player attack strategy file> <second player attack strategy file>
 ```
 
 ## Game Logic
