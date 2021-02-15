@@ -1,3 +1,7 @@
+### Updates
+
+- 02-15 - updated description for `is_prime` to specify that negative numbers are not prime.
+
 # Project 2a: OCaml Warmup
 
 CMSC 330, Spring 2021
@@ -160,7 +164,7 @@ Implement the following functions using recursion.
 
 #### `is_prime x`
 - **Type**: `int -> bool`
-- **Description**: Returns whether or not `x` is prime.
+- **Description**: Returns whether or not `x` is prime.  Note that all negative numbers are non-prime.
 - **Examples**:
   ``` ocaml
   is_prime 1 = false
