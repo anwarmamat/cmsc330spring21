@@ -10,3 +10,5 @@
 ## Discussion Exercises
 
 * [Discussion 2 (Ungraded)](./disc2)
+* [Discussion 3 (Ungraded)](./disc3)
+* [Discussion 4 (Ungraded)](./disc4)
