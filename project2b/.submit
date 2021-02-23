@@ -1,0 +1,9 @@
+[course]
+id = 236847
+name = "CMSC330"
+term = "Spring 2021"
+
+[assignment]
+id = 1045257
+name = "Project 2b - OCaml Higher Order Functions and Data"
+files = [ "src/data.ml", "src/higher.ml" ]
