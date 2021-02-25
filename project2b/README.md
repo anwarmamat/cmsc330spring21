@@ -1,3 +1,7 @@
+### Updates
+* 02-25 - Fixed typo in Part 4 description. The value of `a` at Point B should be 20, not 30.
+* 02-25 - The `var_exists` function in data.ml shouldn't be there, you should remove it
+
 # Project 2b: OCaml Higher Order Functions and Data
 
 Due: March 8 (first late March 9, *10% penalty*; second late March 15, *75% penalty*).
@@ -275,7 +279,7 @@ For this part of the project, you will be trying to implement a variable lookup 
 }
 ```
 
-The inner braces create a new scope for variable bindings. At POINT A (marked in a comment), `a` is bound to 30, but at that point a new scope is opened, and a new binding for `a` is introduced. This binding *shadows* the original binding, so that any reference to `a`, e.g., at POINT B, will return 30, not 20. Once POINT C is reached, the inner binding of `a` is dropped and the original binding is visible again; `c`'s binding is dropped too. Note that you cannot shadow a variable within a scope, only when a new scope is opened. If you're a little rusty on block scoping, you can check out [this link][block scope] or play around with scopes and print statements in C using `gcc`. 
+The inner braces create a new scope for variable bindings. At POINT A (marked in a comment), `a` is bound to 30, but at that point a new scope is opened, and a new binding for `a` is introduced. This binding *shadows* the original binding, so that any reference to `a`, e.g., at POINT B, will return 20, not 30. Once POINT C is reached, the inner binding of `a` is dropped and the original binding is visible again; `c`'s binding is dropped too. Note that you cannot shadow a variable within a scope, only when a new scope is opened. If you're a little rusty on block scoping, you can check out [this link][block scope] or play around with scopes and print statements in C using `gcc`. 
 
 For this part of the project, you will design your own data type `lookup_table` in `data.ml`. You want to design a type that can be used to build all of the following functions, which implement map from variables (represented as `string`s) to values (always `int`s), within a regime of blocked scopes. We will only test your table through the functions that you implement (specified below). There are many different ways to solve this portion of the project! Pick one that makes sense to you.
 
