@@ -1,6 +1,7 @@
 ### Updates
 * 02-25 - Fixed typo in Part 4 description. The value of `a` at Point B should be 20, not 30.
 * 02-25 - The `var_exists` function in data.ml shouldn't be there, you should remove it
+* 03-05 - For Part 4, (lookup_table), you don't have to change the type that was provided. You're welcome to keep it as a list of association lists (i.e. `(string * int) list list`)
 
 # Project 2b: OCaml Higher Order Functions and Data
 
