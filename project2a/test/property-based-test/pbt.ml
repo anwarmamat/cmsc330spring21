@@ -116,9 +116,13 @@ let test_abs_subadditivity =
 let test_area_positive =
   Test.make
   ~name:"test_area_positive"
-  ~count:10
-  (quad int int int int)
-  (fun (a,b,c,d) -> area (a, b) (c, d) >= 0)
+  ~count:1000
+  (quad small_int small_int small_int small_int )
+  (fun (a,b,c,d) -> area (a, b) (c, d) >= 0
+                    &&
+                      area (b,-a) (d,-c) = area (a,b) (c,d)
+
+  )
 
 (* Make sure that fib(x+1) >= fib(x) *)
 let test_fib_inc = 
