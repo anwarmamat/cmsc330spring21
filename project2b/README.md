@@ -5,8 +5,8 @@
 
 # Project 2b: OCaml Higher Order Functions and Data
 
-Due: March 8 (first late March 9, *10% penalty*; second late March 15, *75% penalty*).
-
+Due: ~~March 8 (first late March 9, *10% penalty*; second late March 15, *75% penalty*).~~
+Extended: Due: March 10, (late: March 11 with 10% penalty, March 15 with 75% penalty)
 Points: 65 public, 35 semipublic
 
 # Overview
