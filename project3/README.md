@@ -1,3 +1,7 @@
+### Updates
+
+- 03-12 - The SETS.md file has been fixed to match the actual Sets module given (this involved removing `insert_all` and renaming `minus` to `diff`).  No changes were made to this README
+
 # Project 3: Regular Expression Engine
 Due: March 30th (Late Marth 31st for 90% credit, April 6th for 25% credit).
 
