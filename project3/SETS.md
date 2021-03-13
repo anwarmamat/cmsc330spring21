@@ -80,3 +80,14 @@ eq (intersection (insert 3 (insert 5 (insert 2 []))) []) [] = true
 eq (intersection (insert 5 (insert 7 (insert 3 (insert 2 [])))) (insert 6 (insert 4 []))) [] = true
 eq (intersection (insert 5 (insert 2 [])) (insert 4 (insert 3 (insert 5 [])))) (insert 5 []) = true
 ```
+
+## `cat x a`
+
+- Type: `'a -> 'b list -> ('a * 'b) list`
+- Description: Turns each element of `a` into a 2-tuple where the first element is `x`.
+- Examples:
+```
+cat 1 [2; 3; 4] = [(1,2); (1,3); (1;4)]
+cat 3 [] = []
+cat "hi" [1; 2] = [("hi", 1); ("hi", 2)]
+```
