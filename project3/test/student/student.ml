@@ -1,6 +1,7 @@
-open P3.Nfa
-open P3.Regexp
-open TestUtils
+(* UNCOMMENT the following lines as needed *)
+(*open P3.Nfa*)
+(*open P3.Regexp*)
+(*open TestUtils*)
 open OUnit2
 
 let test_placeholder _ =
