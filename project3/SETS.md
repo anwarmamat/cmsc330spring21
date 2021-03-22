@@ -11,11 +11,6 @@ insert 3 (insert 2 [])
 insert 3 (insert 3 (insert 2 []))
 ```
 
-## `insert_all xs s`
-
-- Type: `'a list -> 'a list -> 'a list`
-- Description: Inserts all the elements of list `xs` into the set `s`.
-
 ## `elem x a`
 
 - Type: `'a -> 'a list -> bool`
@@ -59,7 +54,7 @@ elem 3 (remove 3 (insert 2 (insert 3 []))) = false
 eq (remove 3 (insert 5 (insert 3 []))) (insert 5 []) = true
 ```
 
-## `minus a b`
+## `diff a b`
 
 - Type: `'a list -> 'a list -> 'a list`
 - Description: Subtracts the set `b` from the set `a`.
@@ -86,14 +81,13 @@ eq (intersection (insert 5 (insert 7 (insert 3 (insert 2 [])))) (insert 6 (inser
 eq (intersection (insert 5 (insert 2 [])) (insert 4 (insert 3 (insert 5 [])))) (insert 5 []) = true
 ```
 
-## `product a b`
+## `cat x a`
 
-- Type: `'a list -> 'b list -> ('a * 'b) list`
-- Description: Returns the Cartesian product of sets `a` and `b`. Formally, A × B = {(x,y) | xϵA ∧ yϵB}. (Hint: You may find it useful to write a helper function.)
+- Type: `'a -> 'b list -> ('a * 'b) list`
+- Description: Turns each element of `a` into a 2-tuple where the first element is `x`.
 - Examples:
 ```
-eq (product [] []) [] = true
-eq (product (insert 2 []) []) [] = true
-eq (product (insert 2 []) (insert 2 [])) (insert (2,2) []) = true
-eq (insert (2,3) (insert (2,9) [])) (product (insert 2 []) (insert 3 (insert 9 []))) = true
+cat 1 [2; 3; 4] = [(1,2); (1,3); (1,4)]
+cat 3 [] = []
+cat "hi" [1; 2] = [("hi", 1); ("hi", 2)]
 ```
