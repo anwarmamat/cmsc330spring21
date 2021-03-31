@@ -1,5 +1,5 @@
 # Project 4a: MicroCaml Lexer and Parser
-Due: **Recommended**: 4/8/2021 (Thursday), **Latest for full credit**: 4/12/2021 (Monday)
+Due: **Recommended**: 4/8/2021 (Thursday), **Latest for full credit**: 4/12/2021 (Monday), **Latest for 10% penalty**: 4/13/2021, **Latest for 75% penalty**: 4/19/2021
 
 Points: 48 public, 52 semipublic
 
