@@ -36,8 +36,6 @@ You can also manually submit to [Gradescope](https://www.gradescope.com/courses/
 
 All tests will be run on direct calls to your code, comparing your return values to the expected return values. Any other output (e.g., for your own debugging) will be ignored. You are free and encouraged to have additional output. The only requirement for error handling is that input that cannot be lexed/parsed according to the provided rules should raise an `InvalidInputException`. We recommend using relevant error messages when raising these exceptions, to make debugging easier. We are not requiring intelligent messages that pinpoint an error to help a programmer debug, but as you do this project you might find you see where you could add those.
 
-You can run your lexer or parser directly on a MicroCaml program by running `dune exec bin/interface.bc lex [filename]` or `dune exec bin/interface.bc parse [filename]` where the `[filename]` argument is required.
-
 To test from the toplevel, run `dune utop src`. The necessary functions and types will automatically be imported for you.
 
 You can write your own tests which only test the parser by feeding it a custom token list. For example, to see how the expression `let x = true in x` would be parsed, you can construct the token list manually (e.g. in `utop`):
