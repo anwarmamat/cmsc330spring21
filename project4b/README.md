@@ -3,6 +3,9 @@ Due: **Latest for full credit**: 4/22/2021 (Thursday), **Latest for 10% penalty*
 
 Points: 48 public, 52 semipublic
 
+### Updates
+- 4/7: Fixed example for `not`, modifed how to run mutop toplevel.
+
 ## Introduction
 
 This is part (B) of project 4, in which you implement an interpreter for MicroCaml.
@@ -32,7 +35,7 @@ eval_expr [] (Let ("x", false, Value (Bool true), ID "x"));;
 
 ### Running Mutop
 
-If you do have a working parser and lexer, you can run them and your interpreter together in *mutop* (Micro-utop), a version of `utop` for MicroCaml. Run the command `dune exec bin/mutop.bc` in your terminal or use the shell script `./mutop.sh` to start the mutop toplevel. The toplevel uses your implementations for `parse_mutop` and `eval_mutop` to execute MicroCaml expressions. Here is an example of its use:
+If you do have a working parser and lexer, you can run them and your interpreter together in *mutop* (Micro-utop), a version of `utop` for MicroCaml. Run the command `dune exec bin/mutop.exe` in your terminal or use the shell script `bash mutop.sh` to start the mutop toplevel. The toplevel uses your implementations for `parse_mutop` and `eval_mutop` to execute MicroCaml expressions. Here is an example of its use:
 
 ![Mutop Example](assets/ex.gif)
 
@@ -116,7 +119,7 @@ The unary `not` operator operates only on booleans and produces a `Bool` contain
 ```ocaml
 eval_expr [("x", ref (Bool true))] (Not (ID "x")) = Bool false
 eval_expr [("x", ref (Bool true))] (Not (Not (ID "x"))) = Bool true
-eval_expr [] (Not (Int 1)) (* TypeError "Expected type bool" *)
+eval_expr [] (Not (Value(Int 1))) (* TypeError "Expected type bool" *)
 ```
 
 ### Binop
@@ -289,7 +292,7 @@ eval_mutop [] (Expr (FunctionCall (Fun ("x",
   Binop (Concat, Value (String "("),
     Binop (Concat, ID "x", Value (String ")")))),
       Value (String "parenthesis")))) = ([], Some (String "(parenthesis)"))
-   ```
+```
 
 ### NoOp
 
