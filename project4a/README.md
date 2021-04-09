@@ -370,7 +370,7 @@ Notice how a valid input for the `parse_mutop` must always terminate with `Tok_D
 
 For this part, we created a new keyword `def` to refer to top-level MicroCaml expressions to differentiate local `let`. In essence, `def` is similar to top-level (global) `let` expressions in normal (OCaml) `utop`. This means `def` will create **global definitions** for variables while running `mutop`, in part 4b. Another key difference between `def` and the `let` expressions defined in Part 2 is that `def` should be *implicitly recursive*. (Note that `def rec x = ...;;` is not valid as per the given AST---basically the `rec` is implicit).
 
-Here are some example mutop directives.
+Here are some example mutop directives.  Note that `parse_mutop` should return a tuple of (updated token list, parsed AST), but in these examples we omit the updated token list since it should always just be an empty list.
 
 ### Example 1: Global definition 
 
