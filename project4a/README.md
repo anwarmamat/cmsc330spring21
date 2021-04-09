@@ -1,10 +1,12 @@
+# Updates
+
+- 3/31 - Removed comment in part 1 about ""hello"" which didn't make sense
+- 4/09 - `parse_mutop` examples fixed to have ouput include the updated token list.
+
 # Project 4a: MicroCaml Lexer and Parser
 Due: **Recommended**: 4/8/2021 (Thursday), **Latest for full credit**: 4/12/2021 (Monday), **Latest for 10% penalty**: 4/13/2021, **Latest for 75% penalty**: 4/19/2021
 
 Points: 48 public, 52 semipublic
-
-## Updates
-- 3/31 5pm: Removed comment in part 1 about ""hello"" which didn't make sense
 
 ## Introduction
 
@@ -35,6 +37,8 @@ You can submit through `gradescope-submit` from the project directory and the pr
 You can also manually submit to [Gradescope](https://www.gradescope.com/courses/171498/assignments/786590).  You may only submit the **lexer.ml** and **parser.ml** files.  To test locally, run `dune runtest -f`.
 
 All tests will be run on direct calls to your code, comparing your return values to the expected return values. Any other output (e.g., for your own debugging) will be ignored. You are free and encouraged to have additional output. The only requirement for error handling is that input that cannot be lexed/parsed according to the provided rules should raise an `InvalidInputException`. We recommend using relevant error messages when raising these exceptions, to make debugging easier. We are not requiring intelligent messages that pinpoint an error to help a programmer debug, but as you do this project you might find you see where you could add those.
+
+You can run your lexer or parser directly on a MicroCaml program by running `dune exec bin/interface.bc lex [filename]` or `dune exec bin/interface.bc parse [filename]` where the `[filename]` argument is required.
 
 To test from the toplevel, run `dune utop src`. The necessary functions and types will automatically be imported for you.
 
@@ -77,8 +81,10 @@ Notes:
 - Tokens can be separated by arbitrary amounts of whitespace, which your lexer should discard. Spaces, tabs ('\t') and newlines ('\n') are all considered whitespace.
 - When excaping characters with `\` within Ocaml strings/regexp you must use `\\` to escape from the string and regexp.
 - If the beginning of a string could match multiple tokens, the **longest** match should be preferred, for example:
-  - `let0` should not be lexed as `Tok_Let` followed by `Tok_Int 0`, but as `Tok_ID("let0")`, since it is an identifier
-- There is no "end" token (like `Tok_END` in [lecture][lecture] slides 3-5)  -- when you reach the end of the input, you are done lexing.
+  - "let0" should not be lexed as `Tok_Let` followed by `Tok_Int 0`, but as `Tok_ID("let0")`, since it is an identifier.
+  - "330dlet" should be tokenized as `[Tok_Int 330; Tok_ID "dlet"]`. Arbitrary amounts of whitespace also includes no whitespace.
+  - "(-1)" should not be lexed as `[Tok_LParen; Tok_Sub; Tok_Int(1); Tok_LParen]` but as `Tok_Int(-1)`. (This is further explained below)
+- There is no "end" token (like `Tok_END` the [lecture][lecture] slides 3-5)  -- when you reach the end of the input, you are done lexing.
 
 Most tokens only exist in one form (for example, the only way for `Tok_Concat` to appear in the program is as `^` and the only way for `Tok_Let` to appear in the program is as `let`). However, a few tokens have more complex rules. The regular expressions for these more complex rules are provided here:
 
@@ -87,10 +93,14 @@ Most tokens only exist in one form (for example, the only way for `Tok_Concat` t
 - `Tok_Int of int`: Valid ints may be positive or negative and consist of 1 or more digits. **Negative integers must be surrounded by parentheses** (without extra whitespace) to differentiate from subtraction (examples below). You may find the functions `int_of_string` and `String.sub` useful in lexing this token type.
   - *Regular Expression*: `[0-9]+` OR `(-[0-9]+)`
   - *Examples of int parenthesization*:
-    - `x -1 = [Tok_ID("x"); Tok_Sub; Tok_Int(1)]`
-    - `x (-1) = [Tok_ID("x"); Tok_Int(-1)]`
-- `Tok_String of string`: Valid string will always be surrounded by `""` and **should accept any character except quotes** within them (as well as nothing).
+    - `tokenize "x -1" = [Tok_ID "x"; Tok_Sub; Tok_Int 1]`
+    - `tokenize "x (-1)" = [Tok_ID "x"; Tok_Int (-1)]`
+- `Tok_String of string`: Valid string will always be surrounded by `""` and **should accept any character except quotes** within them (as well as nothing). You have to "sanitize" the matched string to remove surrounding escaped quotes.
   - *Regular Expression*: `\"[^\"]*\"`
+  - *Examples*:
+    - `tokenize "330" = [Tok_ID "330"]`
+    - `tokenize "\"330\"" = [Tok_String "330"]`
+    - `tokenize "\"\"\"" (* InvalidInputException *)`
 - `Tok_ID of string`: Valid IDs must start with a letter and can be followed by any number of letters or numbers. **Note: Keywords may be substrings of IDs**.
   - *Regular Expression*: `[a-zA-Z][a-zA-Z0-9]*`
   - *Valid examples*:
@@ -329,14 +339,14 @@ We present a quick overview of the function first, then the definition of AST ty
 - **Exceptions:** Raise `InvalidInputException` if the input fails to parse i.e does not match the MicroCaml definition grammar.
 - **Examples:**
   ```ocaml
-  parse_mutop [Tok_Def; Tok_ID("x"); Tok_Equal; Tok_Bool(true); Tok_DoubleSemi] = Def ("x", Value (Bool true))
+  parse_mutop [Tok_Def; Tok_ID("x"); Tok_Equal; Tok_Bool(true); Tok_DoubleSemi] = ([], Def ("x", Value (Bool true)))
 
-  parse_mutop [Tok_DoubleSemi] = NoOp
+  parse_mutop [Tok_DoubleSemi] = ([], NoOp)
 
-  parse_mutop [Tok_Int(1); Tok_DoubleSemi] = Expr (Value (Int 1)))
+  parse_mutop [Tok_Int(1); Tok_DoubleSemi] = ([], Expr (Value (Int 1))))
 
   parse_mutop [Tok_Let; Tok_ID "x"; Tok_Equal; Tok_Bool true; Tok_In; Tok_ID "x"; Tok_DoubleSemi] = 
-  Expr (Let ("x", false, Value (Bool true), ID "x"))
+  ([], Expr (Let ("x", false, Value (Bool true), ID "x")))
   ```
 
 ### AST and Grammar of `parse_mutop`
