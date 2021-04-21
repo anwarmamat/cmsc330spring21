@@ -1,0 +1,9 @@
+[course]
+id = 236847
+name = "CMSC330"
+term = "Spring 2021"
+
+[assignment]
+id = 1191264
+name = "Project 5"
+files = [ "src/lib.rs", "src/mandelbrot.rs", "src/points.rs"]
