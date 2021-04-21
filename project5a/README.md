@@ -2,6 +2,8 @@
 
 Due: April 29, 2021 (April 30th for 10% penalty, May 6th for 75% penalty)
 
+Public tests only, no semipublic or secret tests
+
 Ground Rules
 ---------------------
 **This is an individual assignment. You must work on this project alone. However, you may discuss the lectures and the documentation with anyone you like.**

@@ -10,7 +10,7 @@
 * [Project 3 - Regular Expression Engine](./project3)
 * [Project 4a - MicroCaml Lexer and Parser](./project4a)
 * [Project 4b - MicroCaml Lexer and Parser](./project4b)
-* [Project 5a - Rust Warmup](./project5)
+* [Project 5a - Rust Warmup](./project5a)
 
 ## Discussion Exercises
 
