@@ -101,8 +101,12 @@ fn public_test_mandelbrot() {
     // Uncomment to save the image to a file so you can see your output.
     //image.save("mandelbrot.png").unwrap();
  
-    let solution = image::open("tests/public/mandelbrot_solution.png").unwrap();
-    assert_eq!(image, solution.to_rgb8());
+    let solution = image::open("tests/public/mandelbrot_solution.png").unwrap().to_rgb8();
+    for x in 0..512 {
+        for y in 0..512 {
+            assert_eq!(image[(x, y)], solution[(x, y)], "Image pixel ({}, {}) was {:?}, should have been {:?}", x, y, image[(x, y)], solution[(x, y)]);
+        }
+    }
 }
 
 // 10 points
