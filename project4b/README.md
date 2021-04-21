@@ -5,6 +5,8 @@ Points: 48 public, 52 semipublic
 
 ### Updates
 - 4/7: Fixed example for `not`, modifed how to run mutop toplevel.
+- 4/19: Typo in description of `extend_tmp`
+- 4/20: Added missing parentheses in `Def` example
 
 ## Introduction
 
@@ -223,7 +225,7 @@ Being able to modify the placeholder is made possibly by using references; this 
 
 - `extend env x v` produces an environment that extends `env` with a mapping from `x` to `v`
 - `lookup env x` returns `v` if `x` maps to `v` in `env`; if there are multiple mappings, it chooses the most recent.
-- `extend_tmp x` produces an environment that extends `env` with a mapping from `x` to a temporary placeholder.
+- `extend_tmp env x` produces an environment that extends `env` with a mapping from `x` to a temporary placeholder.
 - `update env x v` produces an environment that updates `env` in place, modifying its most recent mapping for `x` to be `v` instead (removing the placeholder).
 
 ### Fun
@@ -269,10 +271,10 @@ For a `Def`, we evaluate its `expr` in the given environment, but with a placeho
 eval_mutop [] (Def ("x", Value(Bool(true)))) =  ([("x", {contents = Bool true})], Some (Bool true))
 ```
 ```ocaml
-eval_mutop [] Def ("f",
+eval_mutop [] (Def ("f",
   Fun ("y",
     If (Binop (Equal, ID "y", Value (Int 0)), Value (Int 1),
-    FunctionCall (ID "f", Binop (Sub, ID "y", Value (Int 1)))))) =
+    FunctionCall (ID "f", Binop (Sub, ID "y", Value (Int 1))))))) =
 ([("f",
   {contents =
     Closure (<cycle>, "y",
