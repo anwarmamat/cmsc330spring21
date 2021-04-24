@@ -36,7 +36,7 @@ In order to compile each part of the project, simply run `cargo build` in the di
 
 Installing Rust and Cargo
 -------------------------
-If you are working in grace, run `module avail rust` every time you log in.
+If you are working in grace, See post [@1845](https://piazza.com/class/kk79wy51s4z3jg?cid=1845) on piazza
 
 To install Rust, please see the [Install Rust](https://www.rust-lang.org/tools/install) page.
 
