@@ -1,3 +1,7 @@
+# Updates
+
+- Apr 26: Added formula for coordinate scaling
+
 # Project 5: Rust Warmup
 
 Due: April 29, 2021 (April 30th for 10% penalty, May 6th for 75% penalty)
@@ -56,6 +60,15 @@ In __src/points.rs__, implement these functions according to the specifications 
 * `duplicate_point`
 
 In __src/mandelbrot.rs__, implement `make_mandelbrot_image`. We encourage you to look at the documentation of `RgbImage`. In particular, see the [code examples](https://docs.rs/image/0.23.14/image/struct.ImageBuffer.html) showing how to set pixels individually. The test will compare your output to the provided file, `mandelbrot_solution.png`, so you will need to make sure your output is exactly right. Be sure to map the number of iterations (there are between 0 and 1000 of them) to grayscale (0 to 255) linearly. All math should be done on f64 types.
+
+The following formulas can be used. Note that you will need to translate these mathematical formulas to Rust code.
+
+x0 = i / width * (1 + 2.5) - 2.5
+y0 = j / height * (1 + 1) - 1
+    where i is in the range [0, width-1] and j is in the range [0, height-1]. 
+
+gray = iteration / 1000 * 255
+
 
 Finally, back in __src/lib.rs__, implement:
 * `collatz_times`
