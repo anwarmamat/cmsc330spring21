@@ -4,7 +4,7 @@
 
 # Project 5b: Turtles for sale!
 
-Due: May 11, 2021 (May 12 for 10% penalty, May 19 for 75% penalty)
+Due: May 11, 2021 (May 18 for 75% penalty)
 
 Public tests only, no semipublic or secret tests
 
