@@ -11,7 +11,7 @@
 * [Project 4a - MicroCaml Lexer and Parser](./project4a)
 * [Project 4b - MicroCaml Lexer and Parser](./project4b)
 * [Project 5a - Rust Warmup](./project5a)
-* [Project 5B - Turtles for Sale!](./project5b)
+* [Project 5b - Turtles for Sale!](./project5b)
 
 ## Discussion Exercises
 
