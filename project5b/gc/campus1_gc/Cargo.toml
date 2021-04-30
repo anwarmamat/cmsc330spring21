@@ -1,0 +1,13 @@
+[package]
+name = "campus1_gc"
+version = "0.1.0"
+authors = ["Michael Coblenz <mcoblenz@cs.umd.edu>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand_pcg = "0.3.0"
+rand = "0.8.3"
+bronze_gc = "^0.1.0"
+bronze_derive = "^0.1.0"
