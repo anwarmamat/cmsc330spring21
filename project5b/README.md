@@ -1,3 +1,7 @@
+# UPDATES
+
+- April 30: Modified point 2 under "The Study" to correct instructions for completing survey.
+
 # Project 5b: Turtles for sale!
 
 Due: May 11, 2021 (May 12 for 10% penalty, May 19 for 75% penalty)
@@ -26,7 +30,7 @@ The study consists of two optional parts:
 
 1. *The experiment*: if you agree to participate in the experiment, we will randomly assign to *either* use garbage collection or not. If you do *not* participate in the experiment, you may choose which version of the assignment to do. 
 
-2. *Surveys*: We would like you to complete questionnaires telling us about your experience with each part of the project. There are four short questionnaires. At the end of each part of the project, complete one survey: https://umdsurvey.umd.edu/jfe/form/SV_9mLFzBb4EscoDJ4
+2. *Surveys*: We would like you to complete questionnaires telling us about your experience with each part of the project. There are four short questionnaires. At the end of each part of the project, complete one survey using the link that was sent to you when you signed up.
 
 Extra Credit:
 
