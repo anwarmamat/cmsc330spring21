@@ -1,6 +1,7 @@
 # UPDATES
 
 - April 30: Modified point 2 under "The Study" to correct instructions for completing survey.
+- May 4: Modified breed test to check child's walking speed against 1 instead of the cross of the parents'.
 
 # Project 5b: Turtles for sale!
 
