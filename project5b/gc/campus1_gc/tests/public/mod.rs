@@ -145,7 +145,7 @@ fn public_test_breed_turtles() {
     let yertle = campus.get_turtle(1);
     let child = campus.get_turtle(2);
     assert_eq!(*child.name(), String::from("Mack"));
-    assert_eq!(child.walking_speed(), cross32(testudo.walking_speed(), yertle.walking_speed()));
+    assert_eq!(child.walking_speed(), 1);
 	assert_eq!(*child.favorite_color(), Color::new(5, 6, 7));
 
     let testudo_flavor = testudo.favorite_flavor();
